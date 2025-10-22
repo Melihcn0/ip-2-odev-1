@@ -44,6 +44,7 @@ return [
         'nationality'       => 'Uyruk',
         'blood_type'        => 'Kan grubu',
         'address'           => 'Adres',
+        'message'           => "Mesaj",
 
         // 🔹 2. EĞİTİM
         'education_level'   => 'Eğitim durumu',

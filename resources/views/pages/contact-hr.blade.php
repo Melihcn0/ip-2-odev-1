@@ -423,22 +423,38 @@
     </div>
 </div>
 
+{{-- 🔹 ONAY --}}
+<div class="form-check mb-3">
+    <input 
+        class="form-check-input @error('consent') is-invalid @enderror" 
+        type="checkbox" 
+        name="consent" 
+        id="consent" 
+        {{ old('consent') ? 'checked' : '' }}>
+    <label class="form-check-label" for="consent">
+        KVKK ve gizlilik politikasını okudum, onaylıyorum.
+    </label>
+    @error('consent')
+        <div class="invalid-feedback d-block">{{ $message }}</div>
+    @enderror
+</div>
 
-    {{-- 🔹 ONAY --}}
-    <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" name="consent" id="consent">
-        <label class="form-check-label" for="consent">
-            KVKK ve gizlilik politikasını okudum, onaylıyorum.
-        </label>
-    </div>
-    <div class="form-check mb-4">
-        <input class="form-check-input" type="checkbox" name="privacy_policy" id="privacy_policy">
-        <label class="form-check-label" for="privacy_policy">
-            Gizlilik politikasını kabul ediyorum.
-        </label>
-    </div>
+<div class="form-check mb-4">
+    <input 
+        class="form-check-input @error('privacy_policy') is-invalid @enderror" 
+        type="checkbox" 
+        name="privacy_policy" 
+        id="privacy_policy"
+        {{ old('privacy_policy') ? 'checked' : '' }}>
+    <label class="form-check-label" for="privacy_policy">
+        Gizlilik politikasını kabul ediyorum.
+    </label>
+    @error('privacy_policy')
+        <div class="invalid-feedback d-block">{{ $message }}</div>
+    @enderror
+</div>
 
-    <button type="submit" class="btn btn-primary w-100 py-2">Başvuruyu Gönder</button>
+    <button type="submit" class="btn btn-primary py-2">Başvuruyu Gönder</button>
 </form>
 @endsection
 
